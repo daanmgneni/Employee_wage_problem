@@ -1,0 +1,44 @@
+# Solving using Switch Case Statement
+
+#shebang constructor
+#!/bin/bash -x
+
+#let the present emp is denote the 1 number
+isFullTime=1;
+
+# let the  part time emp is denote the 1
+isPartTime=2;
+
+#Employee daily work hour time 
+ empRate=20;
+
+# Get the random number by Random function
+checkRandom=$((RANDOM%3))
+
+# check the condition for randon number
+case $checkRandom in
+
+#  full time condition and diaplay the employee salary
+$isFullTime)
+echo  "Daily wage Full time Employee."
+       empHours=8      
+      salary=$(($empHours * $empRate))
+       echo "The salary of the Employee:" $salary
+         ;;
+
+# part time condition and diaplay the employee salary
+$isPartTime)
+echo "Daily wage Part time Employee."
+      empHours=4     
+     salary=$(($empHours * $empRate))
+     echo "The salary of the Employee:" $salary
+        ;;
+
+#  Absent Employee condition and diaplay the employee salary
+*)
+echo "Employee is absent "
+      empHours=0      
+salary=$(($empHours * $empRate))
+ echo "The salary of the Employee:" $salary
+      ;;
+esac
